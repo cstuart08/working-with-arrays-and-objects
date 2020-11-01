@@ -41,6 +41,11 @@
 
 function showValues( obj ) {
   //Code Here
+  let concatenated = ""
+  for (key in obj) {
+    concatenated += obj[key]
+  }
+  return concatenated
 }
 
 
@@ -54,7 +59,16 @@ function showValues( obj ) {
 */
 
 //Code Here
-
+function greaterThan10(obj) {
+  for (key in obj) {
+    for (key in obj) {
+      if (obj[key] > 10) {
+        obj[key] = 0
+      }
+    }
+  }
+  return obj
+}
 
 
 ////////// PROBLEM 3 //////////
@@ -66,7 +80,12 @@ function showValues( obj ) {
 */
 
 //Code Here
-
+let double = (obj) => {
+  for (key in obj) {
+    obj[key] = obj[key] * 2
+  }
+  return obj
+}
 
 
 ////////// PROBLEM 4 //////////
@@ -80,7 +99,15 @@ function showValues( obj ) {
 */
 
 //Code Here
-
+let secrets = (obj) => {
+  let str = ""
+  for (key in obj) {
+    if (key.startsWith("sh")) {
+      str += obj[key]
+    }
+  }
+  return str
+}
 
 
 /* 
@@ -111,7 +138,10 @@ function showValues( obj ) {
 */
 
 //Code Here
-
+let removePassword = (obj) => {
+  delete obj.password
+  return obj
+}
 
 
 ////////// PROBLEM 6 //////////
@@ -130,7 +160,11 @@ var deleteTheBigNumbers = {
 */
 
 //Code Here
-
+for (key in deleteTheBigNumbers) {
+  if (deleteTheBigNumbers[key] > 100) {
+    delete deleteTheBigNumbers[key]
+  }
+}
 
 
 ////////// PROBLEM 7 //////////
@@ -143,7 +177,14 @@ var deleteTheBigNumbers = {
 */
 
 //Code Here
-
+function startsWithK(obj) {
+  for (key in obj) {
+    if (key.startsWith("k")) {
+      delete obj[key]
+    }
+  }
+  return obj
+}
 
 
 ////////// PROBLEM 8 //////////
@@ -158,5 +199,14 @@ var deleteTheBigNumbers = {
 */
 
 //Code Here
-
+let hiddenTreasure = (obj) => {
+  for (key in obj) {
+    if (obj[key].includes("treasure")) {
+      console.log("It is here.")
+    } else {
+      delete obj[key]
+    }
+  }
+  return obj
+}
 
